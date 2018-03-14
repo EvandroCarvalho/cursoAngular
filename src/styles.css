@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+footer h3{
+    border-style: double;
+    margin: 10px;
+    padding: 5
+}
+a:hover{
+    text-decoration: none
+}
+
+article{
+    border-style: double;
+    border-color: lightslategrey;
+    margin: 10px;
+    padding: 5px
+}
+
+h3{
+    font-weight: bold
+}
+
+button{
+    width: 50px;
+    height: 25px;
+}
+p{
+    border-style: groove;
+    width: 300px
+}
+
+input{
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.highlight{
+    background-color: yellow;
+    font-weight: bold
+}
