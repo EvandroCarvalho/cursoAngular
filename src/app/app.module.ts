@@ -6,14 +6,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
-import { BotaoComponent } from './botao/botao.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DataBindingComponent,
-    BotaoComponent
+    
   ],
   imports: [
     BrowserModule,
