@@ -11,17 +11,19 @@ import { OutputPropertyComponent } from './output-property/output-property.compo
 
 
 @NgModule({
-  declarations: [
+  declarations: [  //componentes diretivas e pipes
     AppComponent,
     DataBindingComponent,
     InputPropertyComponent,
     OutputPropertyComponent
   ],
-  imports: [
+  imports: [ //outros modulos que podem ser utilizados no AppComponenet ou dentro de algum
+    // componenete no declarations
+
     BrowserModule,
     FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [], //serviços que ficaram disponiveis para a aplicação
+  bootstrap: [AppComponent] //componente que servira como container da aplicação  
 })
 export class AppModule { }
