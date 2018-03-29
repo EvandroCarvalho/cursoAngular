@@ -1,5 +1,5 @@
 <div class="col-auto my-1">
     <button class="btn btn-success" (click) = "decrementa('valor')">-</button>
-    <input  class="form-control-plaintext" style="font-size: 15px; align-items:center" type="text" [value]="valor" readonly>
+    <input  class="form-control-plaintext" style="font-size: 15px; align-items:center" type="text" [value]="valor" #inputValor readonly>
     <button class="btn btn-primary" (click) = "incrementa('valor')">+</button>
 </div>
