@@ -1,0 +1,110 @@
+<div class="">
+  <section>
+    <h3>
+      Diretiva *ngIf
+    </h3>
+    <div *ngIf="cursos.length > 0">
+      Lista de cursos:
+    </div>
+    <div *ngIf="mostrarCursos">
+      Cursos aqui!
+    </div>
+    <div *ngIf="!mostrarCursos">
+      Não há cursos
+    </div>
+    <br>
+    <button class="btn btn-primary" (click) = onMostrarCursos()>Mostrar cursos</button>
+    <br><br>
+    <h5>Alternativa hidden</h5>
+    <div [hidden] = "mostrarCursos">
+      Cursos aqui!
+    </div>
+    <div [hidden] = "!mostrarCursos">
+      Não há cursos
+    </div>
+  </section>
+  <br> <br>
+  <section>
+    <h3>Diretiva *ngSwitch</h3>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="nav navbar-nav">
+        <a class="nav-item nav-link"
+        [class.active]="aba == 'home'"
+        (click)='aba = "home"' >Home</a>
+        <a class="nav-item nav-link" 
+        [class.active]="aba =='mapa'"
+        (click)='aba = "mapa"' >Mapa</a>
+        <a class="nav-item nav-link"
+        [class.active]="aba == 'lista'"
+        (click)="aba = 'lista'">Lista</a>
+      </div>
+    </nav>
+    <div class="container" [ngSwitch]='aba'>
+      <p *ngSwitchCase="'mapa'" >Modo Mapa Ativado</p>
+      <p *ngSwitchCase="'lista'">Modo lista Ativado</p>
+      <p *ngSwitchDefault>Modo Home</p>
+    </div>
+  </section>
+  <br> <br>
+  <section>
+    <h3>Diretiva *ngFor</h3>
+    <ul>
+      <li *ngFor="let modulo of modulos, let i = index" >{{ i+1 }} - {{ modulo }}</li>
+    </ul>
+  </section>
+  <br> <br>
+  <section>
+    <h3>Diretiva *ngClass</h3>
+    <h1>
+      <!--Modo normal com class binding-->
+      <i class="glyphicon"
+        [class.glyphicon-star-empty] = "!meuFavorito"
+        [class.glyphicon-star] = "meuFavorito"
+        (click)= 'onClick()'>
+      </i>
+    </h1>
+  <h1>
+    <!--utilizando ngClass -->
+    <i class="glyphicon" 
+    [ngClass] = 
+    "{
+      'glyphicon-star-empty' : !meuFavorito,
+      'glyphicon-star' : meuFavorito 
+      }"
+    (click) = 'onClick()'>
+    </i>
+  </h1>
+  </section>
+  <br> <br>
+
+  <section id='estilo'>
+    <h3>Diretiva ngStyle</h3>
+    <!--Modo normal com style binding-->
+    <button
+    [style.backgroundColor] = "ativo ? 'blue' : 'white'"
+    [style.color] = "ativo ? 'white' : 'blue'"
+    [style.fontWeight] = "ativo ? 'bold' : 'normal'"
+    [style.fontSize] = "tamanhoFonte + 'px'"
+    (click) = "mudarAtivo()"
+    >
+     Press 
+    </button>
+    <input type="text" [(ngModel)] = "tamanhoFonte" >
+
+    <!--Com ngStyle-->
+    <button 
+    [ngStyle] = "{
+      'backgroundColor': ( ativo ? 'blue' : 'white' ),
+      'color': ( ativo ? 'white' : 'blue' ),
+      'fontWeight' : ( ativo ? 'bold' : 'normal' ),
+      'fontSize': tamanhoFonte + 'px'
+    }"
+    (click) = "mudarAtivo()"
+    >
+    Press
+    </button>
+    <input type="text" [(ngModel)]="tamanhoFonte">
+
+
+  </section>
+</div>
